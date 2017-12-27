@@ -99,7 +99,7 @@
                 android:layout_marginBottom="3dp"
                 android:gravity="center"
                 android:singleLine="true"
-                android:text="习题"
+                android:text="我"
                 android:textSize="14sp"
                 android:textColor="#666666"/>
 

@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.boxuegu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -14,8 +15,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
+
 public class  MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data!=null){
+            boolean isLogin = data.getBooleanExtra("isLogin",false);
+            if(isLogin){
+
+            }
+        }
+    }
 
     private TextView tv_back;
     private TextView tv_main_title;
@@ -152,6 +165,7 @@ public class  MainActivity extends AppCompatActivity implements View.OnClickList
         }
 
     }
+    private MyInfoView mMyInfoView;
     //选择视图
 
     private void createView(int viewIndex) {
@@ -164,6 +178,15 @@ public class  MainActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case 2:
                 //我的界面
+                if(mMyInfoView == null){
+                    mMyInfoView = new MyInfoView(this);
+                    mBodyLayout.addView(mMyInfoView.getView());
+
+                }else{
+                    mMyInfoView.getView();
+                }
+                mMyInfoView.showView();
+
                 break;
         }
 
