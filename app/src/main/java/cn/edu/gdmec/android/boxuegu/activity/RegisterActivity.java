@@ -37,9 +37,17 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void init() {
+        //从main_title_bar.xml页面获取对应的UI
         tv_main_title = (TextView) findViewById(R.id.tv_main_title);
         tv_main_title.setText("注册");
         tv_back = ((TextView) findViewById(R.id.tv_back));
+        rl_title_bar = (RelativeLayout)findViewById(R.id.title_bar);
+        rl_title_bar.setBackgroundColor(Color.TRANSPARENT);
+        //从activity_register.xml页面获取对应的UI
+        btn_register = (Button)findViewById(R.id.btn_register);
+        et_user_name = (EditText)findViewById(R.id.et_user_name);
+        et_psw = (EditText)findViewById(R.id.et_pwd);
+        et_psw_again = (EditText)findViewById(R.id.et_pwd_again);
 
         tv_back.setOnClickListener(new View.OnClickListener(){
 
@@ -64,12 +72,12 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "请再次输入密码", Toast.LENGTH_SHORT).show();
                     return;
 
-                }else if(!et_psw.equals(pswAgain)){
+                }else if(!psw.equals(pswAgain)){
                     Toast.makeText(RegisterActivity.this, "输入两次的密码不一样", Toast.LENGTH_SHORT).show();
                     return;
 
                 }else if(isExistUsername(userName)){
-                    Toast.makeText(RegisterActivity.this, "此用户已经存在", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "此用户名已经存在", Toast.LENGTH_SHORT).show();
                     return;
 
                 }else {
@@ -106,7 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void getEditString() {
         userName = et_user_name.getText().toString().trim();
-        psw = et_psw.getText().toString();
+        psw = et_psw.getText().toString().trim();
         pswAgain = et_psw_again.getText().toString().trim();
     }
 
