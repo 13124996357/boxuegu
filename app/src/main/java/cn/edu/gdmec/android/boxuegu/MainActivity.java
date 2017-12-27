@@ -25,7 +25,13 @@ public class  MainActivity extends AppCompatActivity implements View.OnClickList
         if(data!=null){
             boolean isLogin = data.getBooleanExtra("isLogin",false);
             if(isLogin){
+                clearBoottomImageState();
+                selectDisplayView(0);
 
+
+            }
+            if(mMyInfoView!=null){
+                mMyInfoView.setLoginParams(isLogin);
             }
         }
     }
