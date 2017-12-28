@@ -17,6 +17,7 @@ import android.widget.Toast;
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.utils.MD5utils;
 
+
 public class LoginActivity extends AppCompatActivity {
     private TextView tv_back;
     private TextView tv_main_title;
@@ -76,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 userName = et_user_name.getText().toString().trim();
-                 psw = et_psw.getText().toString().trim();
+                userName = et_user_name.getText().toString().trim();
+                psw = et_psw.getText().toString().trim();
                 String md5Psw = MD5utils.md5(psw);
                 String spPsw = readPsw(userName);
                 if(TextUtils.isEmpty(userName)){
@@ -135,4 +136,3 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-//5
