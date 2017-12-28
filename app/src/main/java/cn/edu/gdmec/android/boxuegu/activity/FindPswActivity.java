@@ -1,8 +1,15 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
-/**
- * Created by student on 17/12/28.
- */
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class FindPswActivity {
+import cn.edu.gdmec.android.boxuegu.R;
+
+public class FindPswActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_find_psw);
+    }
 }
