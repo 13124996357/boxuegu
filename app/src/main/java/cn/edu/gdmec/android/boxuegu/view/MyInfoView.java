@@ -15,6 +15,7 @@ import android.widget.Toast;
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
 import cn.edu.gdmec.android.boxuegu.activity.SettingActivity;
+import cn.edu.gdmec.android.boxuegu.activity.UserInfoActivity;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 /**
@@ -66,6 +67,9 @@ public class MyInfoView {
             public void onClick(View v) {
 
                 if(readLoginStatus()){
+                    Intent intent = new Intent(mContext, UserInfoActivity.class);
+                    mContext.startActivity(intent);
+
                     //跳到个人界面
 
                 }else{
