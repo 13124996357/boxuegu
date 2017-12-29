@@ -16,6 +16,7 @@ import cn.edu.gdmec.android.boxuegu.R;
 public class SettingActivity extends AppCompatActivity {
 
     public static SettingActivity instace;
+    private  RelativeLayout rl_security_setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class SettingActivity extends AppCompatActivity {
 
          //rl_modiy_psw   和 rl_modify_psw 不一样
         RelativeLayout rl_modiy_psw = (RelativeLayout)findViewById(R.id.rl_modiy_psw);
-        RelativeLayout rl_security_setting = (RelativeLayout)findViewById(R.id.rl_security_setting);
+        rl_security_setting = (RelativeLayout)findViewById(R.id.rl_security_setting);
         RelativeLayout rl_exit_login = (RelativeLayout)findViewById(R.id.rl_exit_login);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +56,9 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //跳到设置密保界面
+                Intent intent = new Intent(SettingActivity.this,FindPswActivity.class);
+                intent.putExtra("from","security");
+                startActivity(intent);
 
             }
         });

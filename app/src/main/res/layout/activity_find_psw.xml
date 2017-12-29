@@ -10,25 +10,87 @@
 
 
     <include layout="@layout/main_title_bar"/>
-
+    
     <TextView
         android:id="@+id/tv_user_name"
-        android:layout_marginTop="35dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="35dp"
         android:layout_marginRight="35dp"
         android:text="你的用户名是?"
-        android:textSize="18sp"
         android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:visibility="gone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-
     <EditText
         android:hint="请输入你的用户名"
         android:singleLine="true"
         android:paddingLeft="8dp"
         android:textColor="#000000"
+        android:textColorHint="#A3A3A3"
+        android:visibility="gone"
+        android:background="@drawable/find_psw_icon"
+        android:id="@+id/et_user_name"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
         android:layout_width="fill_parent"
         android:layout_height="48dp" />
+
+    <TextView
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="15dp"
+        android:text="你的姓名是?"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="请输入你要验证的姓名"
+        android:singleLine="true"
+        android:paddingLeft="8dp"
+        android:textColor="#000000"
+        android:textColorHint="#A3A3A3"
+        android:background="@drawable/find_psw_icon"
+        android:id="@+id/et_validate_name"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" />
+    
+    
+    
+    <TextView
+        android:visibility="gone"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="35dp"
+        android:text="123456"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_reset_psw"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    
+    <Button
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/btn_validate"
+        android:text="验证"
+        android:background="@drawable/register_selector"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp" />
+
+    
+
+
 
 </LinearLayout>

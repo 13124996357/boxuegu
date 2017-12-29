@@ -70,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //未创建界面
+                Intent intent = new Intent(LoginActivity.this,FindPswActivity.class);
+                startActivity(intent);
 
             }
         });
