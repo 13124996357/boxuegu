@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,9 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.boxuegu.view.CourseView;
+import cn.edu.gdmec.android.boxuegu.view.ExercisesView;
 import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
 
-public class  MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class   MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -172,15 +174,37 @@ public class  MainActivity extends AppCompatActivity implements View.OnClickList
 
     }
     private MyInfoView mMyInfoView;
+    private ExercisesView mExercisesView;
+    private CourseView mCourseView;
+
     //选择视图
 
     private void createView(int viewIndex) {
         switch (viewIndex){
             case 0:
                 //课程界面
+               if(mCourseView == null){
+                    mCourseView  = new CourseView(this);
+                    mBodyLayout.addView(mCourseView.getView());
+
+                }else{
+                    mCourseView.getView();
+                }
+                mCourseView.showView();
+
                 break;
+
             case 1:
                 //习题界面
+                if(mExercisesView == null){
+                    mExercisesView  = new ExercisesView(this);
+                    mBodyLayout.addView(mExercisesView.getView());
+
+                }else{
+                    mExercisesView.getView();
+                }
+                mExercisesView.showView();
+
                 break;
             case 2:
                 //我的界面
