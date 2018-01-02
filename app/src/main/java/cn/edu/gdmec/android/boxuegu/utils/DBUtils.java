@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.inputmethodservice.Keyboard;
 
 import cn.edu.gdmec.android.boxuegu.bean.UserBean;
+import cn.edu.gdmec.android.boxuegu.bean.VideoBean;
 import cn.edu.gdmec.android.boxuegu.sqlite.SQLiteHelper;
 
 /**
@@ -14,8 +15,8 @@ import cn.edu.gdmec.android.boxuegu.sqlite.SQLiteHelper;
  */
 
 public class DBUtils {
-    private  SQLiteHelper helper;
-    private final SQLiteDatabase db;
+    private  static SQLiteHelper helper;
+    private static SQLiteDatabase db;
     private static DBUtils instance = null;
 
     public DBUtils(Context context) {
@@ -67,4 +68,45 @@ public class DBUtils {
         db.update(SQLiteHelper.U_USERINFO, cv, "userName =?", new String[]{userName});
     }
 
+    public void saveVideoPlaylist(VideoBean bean, String userName) {
+        if (hasVideoPlay(bean.chapterId,bean.chapterId,userName)){
+            boolean isDelete = delVideoPlay(bean.chapterId,bean.videoId,userName);
+            if (!isDelete){
+                return;
+            }
+
+        }
+        ContentValues cv = new ContentValues();
+        cv.put("userName",userName);
+        cv.put("chapterId",bean.chapterId);
+        cv.put("videoId",bean.videoId);
+        cv.put("videoPath",bean.videoPath);
+        cv.put("title",bean.title);
+        cv.put("secondTitle",bean.secondTitle);
+        db.insert(SQLiteHelper.U_VIDEO_PLAY_LIST,null,cv);
+
+
+    }
+
+    private boolean delVideoPlay(int chapterId, int videoId, String userName) {
+        boolean delSuccess = false;
+        int row = db.delete(SQLiteHelper.U_VIDEO_PLAY_LIST,"chapterId=? AND videoId = ? AND userName = ?",
+                new String []{chapterId + "" ,videoId + "",userName});
+        if (row > 0){
+            delSuccess = true;
+        }
+        return delSuccess;
+    }
+
+    private boolean hasVideoPlay(int chapterId, int videoId, String userName) {
+        boolean hasVideo = false;
+        String sql = "SELECT * FROM" + SQLiteHelper.U_VIDEO_PLAY_LIST + "WHERE chapterId=? AND videoId = ? AND userName = ?";
+
+        Cursor cursor = db.rawQuery(sql,new String []{chapterId + "",videoId + "",userName});
+        if (cursor.moveToFirst()){
+            hasVideo = true;
+        }
+        cursor.close();
+        return hasVideo;
+    }
 }
