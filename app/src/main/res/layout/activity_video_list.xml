@@ -68,9 +68,8 @@
             android:divider="#E4E4E4"
             android:dividerHeight="1dp"
             android:scrollbars="none"
-            android:visibility="gone">
+            android:visibility="gone"/>
 
-        </ListView>
         <ScrollView
             android:id="@+id/sv_chapter_intro"
             android:layout_width="fill_parent"

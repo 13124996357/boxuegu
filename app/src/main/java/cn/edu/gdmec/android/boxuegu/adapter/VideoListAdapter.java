@@ -49,8 +49,8 @@ public class VideoListAdapter extends BaseAdapter{
     }
 
     @Override
-    public Object getItem(int i) {
-        return vbl == null?0:vbl.size();
+    public Object getItem(int position) {
+        return vbl == null?0:vbl.get(position);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class VideoListAdapter extends BaseAdapter{
         if(bean!=null){
             vh.tv_title.setText(bean.secondTitle);
             if (selectedPosition == position){
-                vh.iv_icon.setImageResource(R.drawable.course_bar_icon);
+                vh.iv_icon.setImageResource(R.drawable.course_intro_icon);
                 vh.tv_title.setTextColor(Color.parseColor("#009958"));
             }else {
                 vh.iv_icon.setImageResource(R.drawable.course_bar_icon);

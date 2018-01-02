@@ -68,7 +68,7 @@ public class DBUtils {
         db.update(SQLiteHelper.U_USERINFO, cv, "userName =?", new String[]{userName});
     }
 
-    public void saveVideoPlaylist(VideoBean bean, String userName) {
+    public void saveVideoPlayList(VideoBean bean, String userName) {
         if (hasVideoPlay(bean.chapterId,bean.chapterId,userName)){
             boolean isDelete = delVideoPlay(bean.chapterId,bean.videoId,userName);
             if (!isDelete){

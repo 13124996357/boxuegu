@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -81,12 +82,17 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                     Toast.makeText(VideoListActivity.this,"本地没有此视频,暂时无法播放",Toast.LENGTH_SHORT).show();
                     return;
 
+
                 }else {
-                    if (readLoginStatus()){
-                        String  userName = AnalysisUtils.readLoginUserName(VideoListActivity.this);
-                        db.saveVideoPlaylist(videoList.get(position),userName);
+                    if (readLoginStatus()) {
+                        String userName = AnalysisUtils.readLoginUserName(VideoListActivity.this);
+                        db.saveVideoPlayList(videoList.get(position), userName);
 
                     }
+                    Intent intent = new Intent(VideoListActivity.this, VideoPlayActivity.class);
+                    intent.putExtra("videoPath", videoPath);
+                    intent.putExtra("position", position);
+                    startActivityForResult(intent, 1);
                 }
 
             }
@@ -101,10 +107,22 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
         tv_intro.setTextColor(Color.parseColor("#FFFFFF"));
         tv_video.setTextColor(Color.parseColor("#000000"));
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data!=null){
+            int position = data.getIntExtra("position",0);
+            adapter.setSelectedPosition(position);
+            lv_video_list.setVisibility(View.VISIBLE);
+            sv_chapter_intro.setVisibility(View.GONE);
+            tv_intro.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
+            tv_intro.setTextColor(Color.parseColor("#000000"));
+            tv_video.setTextColor(Color.parseColor("#FFFFFF"));
 
-
-
+        }
     }
 
     private boolean readLoginStatus() {
@@ -136,6 +154,7 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                     bean.videoPath = jsonObj.getString("videoPath");
                     videoList.add(bean);
                 }
+                bean = null;
             }
 
 
@@ -194,8 +213,8 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                 tv_video.setTextColor(Color.parseColor("#000000"));
                 break;
             case R.id.tv_video:
-                lv_video_list.setVisibility(View.GONE);
-                sv_chapter_intro.setVisibility(View.VISIBLE);
+                lv_video_list.setVisibility(View.VISIBLE);
+                sv_chapter_intro.setVisibility(View.GONE);
                 tv_intro.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
                 tv_intro.setTextColor(Color.parseColor("#000000"));
