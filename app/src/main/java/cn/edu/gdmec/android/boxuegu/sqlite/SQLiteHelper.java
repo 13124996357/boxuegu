@@ -23,6 +23,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
      * 创建数据库
      * @param db
      */
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         /**
@@ -42,11 +43,11 @@ public class SQLiteHelper extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE IF NOT EXISTS  " + U_VIDEO_PLAY_LIST  + "( "
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "userName VARCHAR,"//用户名
-                + "chapterId INT,"//昵称
-                + "videoId INT"
-                + "videoPath VARCHAR,"//性别
-                + "title VARCHAR,"
-                + "secondTitle VARCHAR"
+                + "chapterId INT,"//章节ID
+                + "videoId INT,"//小节ID
+                + "videoPath VARCHAR,"//视频地址
+                + "title VARCHAR,"//视频章节名称
+                + "secondTitle VARCHAR"//视频名称
                 +")" );
 
 

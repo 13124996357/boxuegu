@@ -20,17 +20,17 @@ import cn.edu.gdmec.android.boxuegu.bean.VideoBean;
 
 public class VideoListAdapter extends BaseAdapter{
 
-    private Context context;
+    private Context mContext;
     private List<VideoBean> vbl;
     private int selectedPosition = -1;
     private OnSelectListener onSelectListener;
 
     public VideoListAdapter(Context context ,OnSelectListener onSelectListener){
-        this.context = context;
+        this.mContext = context;
         this.onSelectListener= onSelectListener;
     }
     public void setSelectedPosition(int position){
-        this.selectedPosition = position;
+        selectedPosition = position;
 
     }
 
@@ -41,12 +41,12 @@ public class VideoListAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return vbl==null?0:vbl.size();
+        return vbl==null ? 0 : vbl.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return vbl==null?0:vbl.get(i);
+        return vbl == null ? 0 : vbl.get(i);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class VideoListAdapter extends BaseAdapter{
         final ViewHolder vh;
         if(convertView == null){
             vh = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.video_list_item,null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.video_list_item,null);
             vh.tv_title = (TextView) convertView.findViewById(R.id.tv_video_title);
             vh.iv_icon = (ImageView) convertView.findViewById(R.id.iv_left_icon);
             convertView.setTag(vh);

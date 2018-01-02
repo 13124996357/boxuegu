@@ -78,7 +78,7 @@ public class ExercisesView {
                     break;
                 case 3:
                     bean.title = "第4章 数据存储";
-                    bean.content = "";
+                    bean.content = "共计5题";
                     bean.background = (R.drawable.exercises_bg_4);
                     break;
                 case 4:

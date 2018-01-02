@@ -88,8 +88,6 @@ public class CourseAdapter extends BaseAdapter {
                                 intent.putExtra("id",bean.id);
                                 intent.putExtra("intro",bean.intro);
                                 context.startActivity(intent);
-
-
                             }
                         });
                         break;
