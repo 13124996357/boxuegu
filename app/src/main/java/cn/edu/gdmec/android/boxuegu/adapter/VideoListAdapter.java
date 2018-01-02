@@ -2,7 +2,6 @@ package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.view.LayoutInflaterFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,31 +25,28 @@ public class VideoListAdapter extends BaseAdapter{
     private int selectedPosition = -1;
     private OnSelectListener onSelectListener;
 
-
-
-    public VideoListAdapter(Context context,OnSelectListener onSelectListener){
+    public VideoListAdapter(Context context ,OnSelectListener onSelectListener){
         this.context = context;
-        this.onSelectListener = onSelectListener;
+        this.onSelectListener= onSelectListener;
     }
-
     public void setSelectedPosition(int position){
         this.selectedPosition = position;
+
     }
 
     public void setData(List<VideoBean> vbl){
         this.vbl = vbl;
         notifyDataSetChanged();
-
     }
 
     @Override
     public int getCount() {
-        return vbl == null?0:vbl.size();
+        return vbl==null?0:vbl.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return vbl == null?0:vbl.get(position);
+    public Object getItem(int i) {
+        return vbl==null?0:vbl.get(i);
     }
 
     @Override
@@ -61,32 +57,34 @@ public class VideoListAdapter extends BaseAdapter{
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         final ViewHolder vh;
-        if (convertView == null){
+        if(convertView == null){
             vh = new ViewHolder();
             convertView = LayoutInflater.from(context).inflate(R.layout.video_list_item,null);
             vh.tv_title = (TextView) convertView.findViewById(R.id.tv_video_title);
             vh.iv_icon = (ImageView) convertView.findViewById(R.id.iv_left_icon);
             convertView.setTag(vh);
-
         }else {
-            vh = (ViewHolder)convertView.getTag();
+            vh = (ViewHolder) convertView.getTag();
         }
         final VideoBean bean = vbl.get(position);
         vh.iv_icon.setImageResource(R.drawable.course_bar_icon);
         vh.tv_title.setTextColor(Color.parseColor("#333333"));
-        if(bean!=null){
+        if (bean!=null){
             vh.tv_title.setText(bean.secondTitle);
+
             if (selectedPosition == position){
                 vh.iv_icon.setImageResource(R.drawable.course_intro_icon);
                 vh.tv_title.setTextColor(Color.parseColor("#009958"));
             }else {
                 vh.iv_icon.setImageResource(R.drawable.course_bar_icon);
                 vh.tv_title.setTextColor(Color.parseColor("#333333"));
+
+
             }
         }
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 if (bean == null){
                     return;
                 }
@@ -95,16 +93,16 @@ public class VideoListAdapter extends BaseAdapter{
 
             }
         });
+
         return convertView;
     }
 
-     class ViewHolder {
+    class ViewHolder{
+
         public TextView tv_title;
         public ImageView iv_icon;
 
-
     }
-
     public interface OnSelectListener{
         void onSelect(int position,ImageView iv);
     }

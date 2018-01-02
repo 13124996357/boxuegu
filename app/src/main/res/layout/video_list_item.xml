@@ -12,7 +12,7 @@
         android:id="@+id/iv_left_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/course_bar_icon"/>
+        android:src ="@drawable/course_bar_icon"/>
 
     <TextView
         android:id="@+id/tv_video_title"
@@ -20,8 +20,8 @@
         android:layout_height="fill_parent"
         android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
-        android:text="[第一章]Android简介"
         android:textColor="#333333"
-        android:textSize="15sp"/>
+        android:textSize="14dp"
+        android:text="【第一节】Android简介"/>
 
 </LinearLayout>

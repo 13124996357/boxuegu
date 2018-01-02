@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import cn.edu.gdmec.android.boxuegu.R;
 
-public class VideoPlayActivity extends AppCompatActivity {
+public class ViderListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_play);
+        setContentView(R.layout.activity_vider_list);
     }
 }

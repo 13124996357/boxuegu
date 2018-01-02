@@ -10,5 +10,4 @@ public class VideoBean {
     public String title;
     public String secondTitle;
     public String videoPath;
-
 }
