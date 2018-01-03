@@ -100,7 +100,7 @@ public class DBUtils {
 
     private boolean hasVideoPlay(int chapterId, int videoId, String userName) {
         boolean hasVideo = false;
-        String sql = "SELECT * FROM" + SQLiteHelper.U_VIDEO_PLAY_LIST + "WHERE chapterId=? AND videoId = ? AND userName = ?";
+        String sql =" SELECT * FROM " + SQLiteHelper.U_VIDEO_PLAY_LIST + " WHERE chapterId=? AND videoId = ? AND userName = ?";
 
         Cursor cursor = db.rawQuery(sql,new String []{chapterId + "",videoId + "",userName});
         if (cursor.moveToFirst()){
