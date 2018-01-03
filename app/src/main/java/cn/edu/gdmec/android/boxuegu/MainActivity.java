@@ -249,6 +249,7 @@ public class   MainActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     protected long exitTime;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() ==KeyEvent.ACTION_DOWN){
