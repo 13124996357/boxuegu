@@ -43,7 +43,7 @@
 
     <EditText
         android:singleLine="true"
-        android:id="@+id/et_pwd"
+        android:id="@+id/et_psw"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@drawable/register_psw_bg"
@@ -60,7 +60,7 @@
 
     <EditText
         android:singleLine="true"
-        android:id="@+id/et_pwd_again"
+        android:id="@+id/et_psw_again"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@drawable/register_psw_again_bg"
@@ -76,7 +76,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:text="注册"
+        android:text="注   册"
         android:id="@+id/btn_register"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"

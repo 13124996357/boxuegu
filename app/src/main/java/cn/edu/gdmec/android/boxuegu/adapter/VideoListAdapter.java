@@ -45,8 +45,8 @@ public class VideoListAdapter extends BaseAdapter{
     }
 
     @Override
-    public Object getItem(int i) {
-        return vbl == null ? 0 : vbl.get(i);
+    public VideoBean getItem(int position) {
+        return vbl == null ? null : vbl.get(position);
     }
 
     @Override

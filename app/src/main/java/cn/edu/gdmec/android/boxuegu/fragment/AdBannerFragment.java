@@ -29,6 +29,16 @@ public class AdBannerFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle arg = getArguments();
         ab = arg.getString("ad");
+
+    }
+
+    /**
+     * 添加的
+     * @param savedInstanceState
+     */
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -54,11 +64,11 @@ public class AdBannerFragment extends Fragment {
         }
     }
 
-    @Nullable
+    //@Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         iv = new ImageView(getActivity());
-        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,ViewGroup.LayoutParams.FILL_PARENT);
+        ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         iv.setLayoutParams(lp);
         iv.setScaleType(ImageView.ScaleType.FIT_XY);
         return  iv;

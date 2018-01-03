@@ -2,6 +2,7 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.utils.MD5utils;
 
 public class RegisterActivity extends AppCompatActivity {
+
     private TextView tv_back;
     private RelativeLayout rl_title_bar;
     private TextView tv_main_title;
@@ -33,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
     }
 
@@ -46,8 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
         //从activity_register.xml页面获取对应的UI
         btn_register = (Button)findViewById(R.id.btn_register);
         et_user_name = (EditText)findViewById(R.id.et_user_name);
-        et_psw = (EditText)findViewById(R.id.et_pwd);
-        et_psw_again = (EditText)findViewById(R.id.et_pwd_again);
+        et_psw = (EditText)findViewById(R.id.et_psw);
+        et_psw_again = (EditText)findViewById(R.id.et_psw_again);
 
         tv_back.setOnClickListener(new View.OnClickListener(){
 

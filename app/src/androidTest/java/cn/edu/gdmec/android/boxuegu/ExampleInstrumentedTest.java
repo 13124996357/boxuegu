@@ -91,7 +91,7 @@ public class ExampleInstrumentedTest {
         pwd1.setText("a");
         UiObject2 pwd2 = results.get(2);
         pwd2.setText("a");
-        result = mDevice.findObject(new UiSelector().textStartsWith("注 册"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("注   册"));
         result.clickAndWaitForNewWindow();
         result = mDevice.findObject(new UiSelector().textStartsWith("a"));
         if(!result.exists()){
@@ -105,9 +105,9 @@ public class ExampleInstrumentedTest {
         result.clickAndWaitForNewWindow();
         result = mDevice.findObject(new UiSelector().textStartsWith("点击登录"));
         result.clickAndWaitForNewWindow();
-        result = mDevice.findObject(new UiSelector().textStartsWith("登 录"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("登  录"));
         result.clickAndWaitForNewWindow();
-        result = mDevice.findObject(new UiSelector().textStartsWith("登 录"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("登  录"));
         if(!result.exists()){
             throw new Exception("Can't login check.");
         }
@@ -124,7 +124,7 @@ public class ExampleInstrumentedTest {
         username.setText("a");
         pwd1 = results.get(1);
         pwd1.setText("a");
-        result = mDevice.findObject(new UiSelector().textStartsWith("登 录"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("登  录"));
         result.clickAndWaitForNewWindow();
         result = mDevice.findObject(new UiSelector().textStartsWith("我"));
         result.clickAndWaitForNewWindow();
@@ -156,7 +156,7 @@ public class ExampleInstrumentedTest {
         username.setText("a");
         pwd1 = results.get(1);
         pwd1.setText("b");
-        result = mDevice.findObject(new UiSelector().textStartsWith("登 录"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("登  录"));
         result.clickAndWaitForNewWindow();
         result = mDevice.findObject(new UiSelector().textStartsWith("a"));
         result.clickAndWaitForNewWindow();
@@ -230,7 +230,7 @@ public class ExampleInstrumentedTest {
         username.setText("a");
         pwd1 = results.get(1);
         pwd1.setText("123456");
-        result = mDevice.findObject(new UiSelector().textStartsWith("登 录"));
+        result = mDevice.findObject(new UiSelector().textStartsWith("登  录"));
         result.clickAndWaitForNewWindow();
         result = mDevice.findObject(new UiSelector().textStartsWith("我"));
         result.clickAndWaitForNewWindow();

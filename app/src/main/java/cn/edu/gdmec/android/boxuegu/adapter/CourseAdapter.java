@@ -40,8 +40,8 @@ public class CourseAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return cbl == null ? 0 : cbl.get(position);
+    public List<CourseBean> getItem(int position) {
+        return cbl == null ? null : cbl.get(position);
     }
 
     @Override
