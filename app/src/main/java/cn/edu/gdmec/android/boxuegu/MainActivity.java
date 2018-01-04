@@ -227,8 +227,8 @@ public class   MainActivity extends AppCompatActivity implements View.OnClickLis
     //移去不需要的视图
 
     private void removeAllView() {
-        for (int i=0;i<mBottomLayout.getChildCount();i++){
-            mBottomLayout.getChildAt(i).setVisibility(View.GONE);
+        for (int i=0;i<mBodyLayout.getChildCount();i++){
+            mBodyLayout.getChildAt(i).setVisibility(View.GONE);
         }
         
     }

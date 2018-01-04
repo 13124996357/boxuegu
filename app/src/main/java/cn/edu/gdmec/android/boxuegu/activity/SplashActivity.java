@@ -19,7 +19,7 @@ import cn.edu.gdmec.android.boxuegu.R;
  * Created by student on 17/12/25.
  */
 
-public class SplashActivity extends AppCompatActivity{
+public class  SplashActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
