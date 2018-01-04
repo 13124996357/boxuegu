@@ -77,6 +77,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void setValue(UserBean bean) {
+
         tv_nickName.setText(bean.nickName);
         tv_user_name.setText(bean.userName);
         tv_sex.setText(bean.sex);
@@ -92,9 +93,12 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
         rl_nickName = (RelativeLayout)findViewById(R.id.rl_nickName);
         tv_nickName = (TextView)findViewById(R.id.tv_nickName);
+
         tv_user_name = (TextView)findViewById(R.id.tv_user_name);
+
         rl_sex = (RelativeLayout)findViewById(R.id.rl_sex);
         tv_sex = (TextView)findViewById(R.id.tv_sex);
+
         rl_signature = (RelativeLayout)findViewById(R.id.rl_signature);
         tv_signature = (TextView)findViewById(R.id.tv_signature);
 
@@ -106,6 +110,11 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             case R.id.tv_back:
                 this.finish();
                 break;
+
+           // case R.id.:
+                //    break;
+
+
             case R.id.rl_nickName:
                 String name = tv_nickName.getText().toString();
                 Bundle bdName = new Bundle();

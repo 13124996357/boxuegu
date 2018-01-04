@@ -98,7 +98,7 @@ public class ExampleInstrumentedTest {
             throw new Exception("Can't register user.");
         }
     }
-    @Test
+   @Test
     public void t02LoginCheck() throws Exception {
         sleep(3000);
         result = mDevice.findObject(new UiSelector().textStartsWith("我"));
@@ -287,8 +287,8 @@ public class ExampleInstrumentedTest {
     public void t11Course() throws Exception {
         sleep(3000);
         appList = new UiScrollable(new UiSelector().className("android.widget.ListView"));
-        appList.flingToEnd(5);
-        result = mDevice.findObject(new UiSelector().textStartsWith("第10章"));
+        appList.flingToEnd(10);
+        result = mDevice.findObject(new UiSelector().textStartsWith("第10章 "));
         if(!result.exists()){
             throw new Exception("Can't find course.");
         }
