@@ -133,7 +133,7 @@ public class ExampleInstrumentedTest {
             throw new Exception("Can't login.");
         }
     }
-    @Test
+   @Test
     public void t04ChangePassword() throws Exception {
         sleep(3000);
         result = mDevice.findObject(new UiSelector().textStartsWith("我"));
@@ -248,7 +248,7 @@ public class ExampleInstrumentedTest {
             throw new Exception("Can't change nickname.");
         }
     }
-    @Test
+     @Test
     public void t09ChangeGender() throws Exception {
         sleep(3000);
         result = mDevice.findObject(new UiSelector().textStartsWith("我"));
